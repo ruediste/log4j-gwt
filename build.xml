@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<project>
+	
+	<!-- change version number in .zip file here -->
+	<property name="version" value="1.0.5" />
+
+	<!-- create distribution -->
+	<target name="dist" description="creates the distribution">
+
+		<!-- GWT libraries consists of the source code, not the class files -->		
+		<delete file="log4j-gwt.jar" quiet="true" />
+		<zip destfile="log4j-gwt.jar" basedir="src" />
+
+		<!-- zip the log4j-gwt.jar and the documentation -->
+		<delete quiet="true">
+			<fileset dir=".">
+				<include name="log4j-gwt-*.zip"/>
+			</fileset>
+		</delete>
+		<zip destfile="log4j-gwt-${version}.zip">
+			<fileset dir=".">
+				<include name="log4j-gwt.jar" />
+				<include name="README.txt" />
+				<include name="LICENSE" />
+				<include name="NOTICE" />
+			</fileset>
+		</zip>
+		
+	</target>
+
+</project>

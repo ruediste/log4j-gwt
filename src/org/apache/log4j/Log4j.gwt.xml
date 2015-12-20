@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='log4j_gwt'>
+  <inherits name='com.google.gwt.user.User'/>
+  <source path="" />
+  <super-source path='supersource'/>
+</module>
